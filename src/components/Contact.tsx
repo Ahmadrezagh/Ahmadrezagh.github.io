@@ -1,4 +1,5 @@
 import { links, site } from "@/data/content";
+import { ContactIcon } from "./ContactIcon";
 import { Reveal } from "./Reveal";
 
 export function Contact() {
@@ -37,12 +38,15 @@ export function Contact() {
               className="link-tile"
               aria-label={`${link.label}: ${link.value}`}
             >
-              <span className="link-tile-swap">
-                <span className="link-tile-label" aria-hidden="true">
-                  {link.label}
-                </span>
-                <span className="link-tile-value" aria-hidden="true">
-                  {link.value}
+              <span className="link-tile-main">
+                <ContactIcon name={link.label} className="link-tile-icon" />
+                <span className="link-tile-swap">
+                  <span className="link-tile-label" aria-hidden="true">
+                    {link.label}
+                  </span>
+                  <span className="link-tile-value" aria-hidden="true">
+                    {link.value}
+                  </span>
                 </span>
               </span>
               <span className="mono text-sm opacity-70">↗</span>

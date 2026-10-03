@@ -21,14 +21,14 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ahmadreza Ghanbari — Laravel Developer",
+  title: "Ahmadreza Ghanbari — Software Engineer",
   description:
-    "Laravel developer in Tehran building clean, scalable web applications across e-commerce, CRM, EdTech, and fintech.",
+    "Software engineer in Tehran building clean, scalable web applications across e-commerce, CRM, EdTech, and fintech.",
   metadataBase: new URL("https://ahmadrezagh.github.io"),
   openGraph: {
-    title: "Ahmadreza Ghanbari — Laravel Developer",
+    title: "Ahmadreza Ghanbari — Software Engineer",
     description:
-      "Portfolio of Ahmadreza Ghanbari — Laravel / PHP developer based in Tehran.",
+      "Portfolio of Ahmadreza Ghanbari — software engineer based in Tehran.",
     url: "https://ahmadrezagh.github.io",
     siteName: "Ahmadreza Ghanbari",
     type: "website",

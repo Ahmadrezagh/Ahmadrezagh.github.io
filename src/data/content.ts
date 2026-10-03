@@ -1,7 +1,7 @@
 export const site = {
   name: "Ahmadreza Ghanbari",
   brand: "Ahmadreza",
-  title: "Laravel Developer",
+  title: "Software Engineer",
   location: "Tehran, Iran",
   tagline:
     "Building clean, scalable web applications with Laravel and modern technologies.",

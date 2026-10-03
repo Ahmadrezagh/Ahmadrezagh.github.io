@@ -409,6 +409,22 @@ a {
   transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
 }
 
+.link-tile-main {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.link-tile-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: color 0.25s ease;
+}
+
 .link-tile:hover,
 .link-tile:focus-visible {
   border-color: rgba(216, 58, 44, 0.5);
@@ -417,11 +433,17 @@ a {
   outline: none;
 }
 
+.link-tile:hover .link-tile-icon,
+.link-tile:focus-visible .link-tile-icon {
+  color: var(--accent-bright);
+}
+
 .link-tile-swap {
   position: relative;
   display: grid;
   min-width: 0;
   flex: 1;
+  text-align: left;
 }
 
 .link-tile-label,
