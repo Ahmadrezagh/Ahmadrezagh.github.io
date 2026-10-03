@@ -35,8 +35,16 @@ export function Contact() {
               target={link.href.startsWith("mailto:") ? undefined : "_blank"}
               rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
               className="link-tile"
+              aria-label={`${link.label}: ${link.value}`}
             >
-              <span>{link.label}</span>
+              <span className="link-tile-swap">
+                <span className="link-tile-label" aria-hidden="true">
+                  {link.label}
+                </span>
+                <span className="link-tile-value" aria-hidden="true">
+                  {link.value}
+                </span>
+              </span>
               <span className="mono text-sm opacity-70">↗</span>
             </a>
           </Reveal>

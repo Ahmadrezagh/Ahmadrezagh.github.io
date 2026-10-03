@@ -13,13 +13,41 @@ export const site = {
 };
 
 export const links = [
-  { label: "Website", href: "https://ahmadrezagh.github.io" },
-  { label: "Email", href: "mailto:ahmadreza1998dev@gmail.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/ahmadrezaweb/" },
-  { label: "GitHub", href: "https://github.com/Ahmadrezagh" },
-  { label: "Telegram", href: "https://t.me/ahmadreza.web" },
-  { label: "YouTube", href: "https://youtube.com/@ahmadrezaweb" },
-  { label: "X", href: "https://x.com/Ahmadreza_ghh" },
+  {
+    label: "Website",
+    value: "ahmadrezagh.github.io",
+    href: "https://ahmadrezagh.github.io",
+  },
+  {
+    label: "Email",
+    value: "ahmadreza1998dev@gmail.com",
+    href: "mailto:ahmadreza1998dev@gmail.com",
+  },
+  {
+    label: "LinkedIn",
+    value: "ahmadrezaweb",
+    href: "https://www.linkedin.com/in/ahmadrezaweb/",
+  },
+  {
+    label: "GitHub",
+    value: "Ahmadrezagh",
+    href: "https://github.com/Ahmadrezagh",
+  },
+  {
+    label: "Telegram",
+    value: "@ahmadreza.web",
+    href: "https://t.me/ahmadreza.web",
+  },
+  {
+    label: "YouTube",
+    value: "@ahmadrezaweb",
+    href: "https://youtube.com/@ahmadrezaweb",
+  },
+  {
+    label: "X",
+    value: "@Ahmadreza_ghh",
+    href: "https://x.com/Ahmadreza_ghh",
+  },
 ] as const;
 
 export const tech = {
