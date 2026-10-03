@@ -140,6 +140,14 @@ export const projects: Project[] = [
     category: "platforms",
   },
   {
+    name: "IranAkademi",
+    description:
+      "University entrance-exam academy with counseling, psychology, and student success services.",
+    stack: ["Laravel"],
+    href: "https://iranakademi.com",
+    category: "platforms",
+  },
+  {
     name: "Nerkhoone",
     description:
       "Live currency exchange rate board with real-time IRR prices and API access.",
