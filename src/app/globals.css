@@ -360,16 +360,30 @@ a {
 .tech-chip {
   display: inline-flex;
   align-items: center;
+  gap: 0.45rem;
   padding: 0.45rem 0.8rem;
   border: 1px solid var(--line);
   background: rgba(14, 14, 14, 0.75);
   color: var(--ink);
   font-size: 0.9rem;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.tech-chip-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: color 0.2s ease;
 }
 
 .tech-chip:hover {
   border-color: rgba(216, 58, 44, 0.45);
+  color: var(--accent-bright);
+  background: rgba(216, 58, 44, 0.06);
+}
+
+.tech-chip:hover .tech-chip-icon {
   color: var(--accent-bright);
 }
 

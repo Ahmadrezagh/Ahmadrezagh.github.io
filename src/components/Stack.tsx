@@ -1,5 +1,6 @@
 import { tech } from "@/data/content";
 import { Reveal } from "./Reveal";
+import { TechIcon } from "./TechIcon";
 
 export function Stack() {
   return (
@@ -21,6 +22,7 @@ export function Stack() {
               <div className="flex flex-wrap gap-2">
                 {items.map((item) => (
                   <span key={item} className="tech-chip">
+                    <TechIcon name={item} className="tech-chip-icon" />
                     {item}
                   </span>
                 ))}
