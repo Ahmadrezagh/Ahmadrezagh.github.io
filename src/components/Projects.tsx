@@ -20,7 +20,7 @@ export function Projects() {
       <Reveal>
         <div className="mb-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mono mb-3 text-xs uppercase tracking-[0.24em] text-[var(--teal)]">
+            <p className="mono mb-3 text-xs uppercase tracking-[0.24em] text-[var(--accent)]">
               Selected work
             </p>
             <h2 className="display text-4xl font-semibold md:text-5xl">Projects</h2>
@@ -55,7 +55,7 @@ export function Projects() {
                       <p className="text-[var(--muted)] transition-colors group-hover:text-inherit">
                         {project.description}
                       </p>
-                      <p className="mono mt-2 text-xs tracking-wide text-[var(--teal)]">
+                      <p className="mono mt-2 text-xs tracking-wide text-[var(--accent)]">
                         {project.stack.join(" · ")}
                       </p>
                     </div>

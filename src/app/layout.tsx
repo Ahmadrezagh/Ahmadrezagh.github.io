@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Figtree, JetBrains_Mono, Unbounded } from "next/font/google";
+import { IBM_Plex_Mono, Sora, Syne } from "next/font/google";
 import "./globals.css";
 
-const display = Unbounded({
+const display = Syne({
   subsets: ["latin"],
   variable: "--font-display",
+  weight: ["500", "600", "700", "800"],
 });
 
-const body = Figtree({
+const body = Sora({
   subsets: ["latin"],
   variable: "--font-body",
+  weight: ["300", "400", "500", "600"],
 });
 
-const mono = JetBrains_Mono({
+const mono = IBM_Plex_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -29,6 +32,7 @@ export const metadata: Metadata = {
     url: "https://ahmadrezagh.github.io",
     siteName: "Ahmadreza Ghanbari",
     type: "website",
+    images: [{ url: "/brand-logo.png" }],
   },
 };
 

@@ -5,9 +5,9 @@ export function Stack() {
   return (
     <section id="stack" className="section py-24 md:py-28">
       <Reveal>
-        <p className="mono mb-3 text-xs uppercase tracking-[0.24em] text-[var(--teal)]">
-          Toolkit
-        </p>
+          <p className="mono mb-3 text-xs uppercase tracking-[0.24em] text-[var(--accent)]">
+            Toolkit
+          </p>
         <h2 className="display mb-10 text-4xl font-semibold md:text-5xl">Tech stack</h2>
       </Reveal>
 

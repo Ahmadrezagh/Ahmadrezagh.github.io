@@ -5,7 +5,7 @@ export function Contact() {
   return (
     <section id="contact" className="section py-24 md:py-32">
       <Reveal>
-        <p className="mono mb-3 text-xs uppercase tracking-[0.24em] text-[var(--teal)]">
+        <p className="mono mb-3 text-xs uppercase tracking-[0.24em] text-[var(--accent)]">
           Connect
         </p>
         <h2 className="display mb-4 text-4xl font-semibold md:text-6xl">
@@ -34,7 +34,7 @@ export function Contact() {
               href={link.href}
               target={link.href.startsWith("mailto:") ? undefined : "_blank"}
               rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
-              className="flex items-center justify-between border border-[var(--line)] bg-[rgba(18,26,33,0.55)] px-4 py-4 transition hover:border-[rgba(232,165,75,0.45)] hover:text-[var(--accent)]"
+              className="link-tile"
             >
               <span>{link.label}</span>
               <span className="mono text-sm opacity-70">↗</span>

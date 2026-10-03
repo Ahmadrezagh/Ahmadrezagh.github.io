@@ -6,7 +6,7 @@ export function About() {
     <section id="about" className="section py-24 md:py-28">
       <div className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-start">
         <Reveal>
-          <p className="mono mb-3 text-xs uppercase tracking-[0.24em] text-[var(--teal)]">
+          <p className="mono mb-3 text-xs uppercase tracking-[0.24em] text-[var(--accent)]">
             About
           </p>
           <h2 className="display text-4xl font-semibold md:text-5xl">
