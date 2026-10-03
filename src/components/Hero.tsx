@@ -42,8 +42,8 @@ export function Hero() {
           <a href="#work" className="btn btn-primary">
             View projects
           </a>
-          <a href={site.portfolio} className="btn btn-ghost" target="_blank" rel="noreferrer">
-            ahmadreza.dev
+          <a href={`mailto:${site.email}`} className="btn btn-ghost">
+            Contact
           </a>
         </div>
       </div>

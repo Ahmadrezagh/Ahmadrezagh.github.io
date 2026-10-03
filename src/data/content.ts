@@ -7,14 +7,14 @@ export const site = {
     "Building clean, scalable web applications with Laravel and modern technologies.",
   description:
     "Backend-focused developer shipping e-commerce, CRM, EdTech, and fintech platforms.",
-  portfolio: "https://ahmadreza.dev",
-  email: "contact@ahmadreza.dev",
+  portfolio: "https://ahmadrezagh.github.io",
+  email: "ahmadreza1998dev@gmail.com",
   phone: "+989139759913",
 };
 
 export const links = [
-  { label: "Website", href: "https://ahmadreza.dev" },
-  { label: "Email", href: "mailto:contact@ahmadreza.dev" },
+  { label: "Website", href: "https://ahmadrezagh.github.io" },
+  { label: "Email", href: "mailto:ahmadreza1998dev@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/ahmadrezaweb/" },
   { label: "GitHub", href: "https://github.com/Ahmadrezagh" },
   { label: "Telegram", href: "https://t.me/ahmadreza.web" },
