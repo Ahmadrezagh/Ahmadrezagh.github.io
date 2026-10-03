@@ -1,5 +1,6 @@
 import { projects } from "@/data/content";
 import { Reveal } from "./Reveal";
+import { TechIcon } from "./TechIcon";
 
 const groups = [
   {
@@ -35,33 +36,40 @@ export function Projects() {
         {groups.map((group, groupIndex) => (
           <div key={group.id}>
             <Reveal delay={groupIndex * 80}>
-              <h3 className="mono mb-2 text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
+              <h3 className="mono mb-5 text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
                 {group.title}
               </h3>
             </Reveal>
-            <div>
+            <div className="project-grid">
               {group.items.map((project, index) => (
                 <Reveal key={project.name} delay={index * 40}>
                   <a
                     href={project.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="project-row"
+                    className="project-card"
                   >
-                    <div className="display text-xl font-semibold md:text-2xl">
-                      {project.name}
+                    <div className="flex items-start justify-between gap-3">
+                      <h4 className="display text-xl font-semibold md:text-2xl">
+                        {project.name}
+                      </h4>
+                      <span className="project-arrow mono shrink-0 text-sm text-[var(--accent)]">
+                        Visit ↗
+                      </span>
                     </div>
-                    <div>
-                      <p className="text-[var(--muted)] transition-colors group-hover:text-inherit">
-                        {project.description}
-                      </p>
-                      <p className="mono mt-2 text-xs tracking-wide text-[var(--accent)]">
-                        {project.stack.join(" · ")}
-                      </p>
-                    </div>
-                    <div className="project-arrow mono text-sm text-[var(--accent)]">
-                      Visit ↗
-                    </div>
+
+                    <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] md:text-[0.95rem]">
+                      {project.description}
+                    </p>
+
+                    <ul className="project-tech-list" aria-label={`${project.name} tech stack`}>
+                      {project.stack.map((item) => (
+                        <li key={item} className="project-tech">
+                          <TechIcon name={item} className="project-tech-icon" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </a>
                 </Reveal>
               ))}

@@ -265,35 +265,93 @@ a {
   }
 }
 
-.project-row {
+.project-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.75rem;
-  padding: 1.35rem 0;
-  border-bottom: 1px solid var(--line);
-  transition: color 0.25s ease, padding 0.25s ease;
+  gap: 1rem;
 }
 
 @media (min-width: 768px) {
-  .project-row {
-    grid-template-columns: 220px 1fr auto;
-    align-items: baseline;
-    gap: 1.5rem;
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.15rem;
   }
 }
 
-.project-row:hover {
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.25rem 1.3rem 1.35rem;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(165deg, rgba(216, 58, 44, 0.05), transparent 42%),
+    rgba(14, 14, 14, 0.72);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  border-color: rgba(216, 58, 44, 0.45);
+  background:
+    linear-gradient(165deg, rgba(216, 58, 44, 0.1), transparent 48%),
+    rgba(18, 12, 12, 0.88);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+  transform: translateY(-2px);
+  color: var(--ink);
+}
+
+.project-card:hover .project-arrow {
+  transform: translate(3px, -3px);
+  opacity: 1;
   color: var(--accent-bright);
 }
 
-.project-row:hover .project-arrow {
-  transform: translate(3px, -3px);
-  opacity: 1;
+.project-card:hover h4 {
+  color: var(--accent-bright);
 }
 
 .project-arrow {
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, color 0.25s ease;
   opacity: 0.55;
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 1.15rem;
+  list-style: none;
+}
+
+.project-tech {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid rgba(249, 243, 227, 0.08);
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--muted);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.project-card:hover .project-tech {
+  border-color: rgba(216, 58, 44, 0.28);
+  color: var(--ink);
+}
+
+.project-tech-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+  color: var(--accent);
 }
 
 .nav-link {
