@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   description:
     "Software engineer in Tehran building clean, scalable web applications across e-commerce, CRM, EdTech, and fintech.",
   metadataBase: new URL("https://ahmadrezagh.github.io"),
+  verification: {
+    google: "LbXN2kt_0-SQ7FluzkOUjNfoW2BwlPJLxUwR8_YStt0",
+  },
   openGraph: {
     title: "Ahmadreza Ghanbari — Software Engineer",
     description:
