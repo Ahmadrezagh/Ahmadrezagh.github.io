@@ -68,6 +68,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "PayKey",
+    description:
+      "Digital store for gift cards, original games, and online subscriptions with fast delivery.",
+    stack: ["Laravel", "Next.js"],
+    href: "https://paykey.shop/",
+    category: "commerce",
+  },
+  {
     name: "TorobShop",
     description:
       "E-commerce for authentic international products, including Amazon order and delivery to Iran.",
