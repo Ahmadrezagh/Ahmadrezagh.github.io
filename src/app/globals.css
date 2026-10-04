@@ -88,6 +88,155 @@ a {
   z-index: 1;
 }
 
+/* Code X-Ray flashlight — lives under UI, lights the background */
+.code-xray {
+  --cx: 50vw;
+  --cy: 35vh;
+  --cx-size: 140px;
+  --scroll: 0px;
+  pointer-events: none !important;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.code-xray,
+.code-xray * {
+  pointer-events: none !important;
+}
+
+.code-xray[data-state="ready"] {
+  opacity: 0;
+}
+
+.code-xray[data-state="on"] {
+  opacity: 1;
+}
+
+.code-xray[data-state="off"] {
+  display: none;
+}
+
+.code-xray-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--cx-size) * 2.1);
+  height: calc(var(--cx-size) * 2.1);
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgba(216, 58, 44, 0.16) 0%,
+    rgba(216, 58, 44, 0.06) 35%,
+    transparent 70%
+  );
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+.code-xray-panel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: radial-gradient(
+    circle calc(var(--cx-size) * 1.35) at var(--cx) var(--cy),
+    rgba(4, 3, 3, 0.88) 0%,
+    rgba(5, 4, 4, 0.45) 45%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle calc(var(--cx-size) * 1.35) at var(--cx) var(--cy),
+    #000 0%,
+    rgba(0, 0, 0, 0.85) 28%,
+    rgba(0, 0, 0, 0.45) 52%,
+    rgba(0, 0, 0, 0.12) 74%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle calc(var(--cx-size) * 1.35) at var(--cx) var(--cy),
+    #000 0%,
+    rgba(0, 0, 0, 0.85) 28%,
+    rgba(0, 0, 0, 0.45) 52%,
+    rgba(0, 0, 0, 0.12) 74%,
+    transparent 100%
+  );
+}
+
+.code-xray-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(18rem, 1fr));
+  gap: 1.75rem;
+  width: max(100vw, 90rem);
+  min-height: max(220%, 320vh);
+  padding: 1.25rem 1rem 80vh;
+  will-change: transform;
+  transform: translate3d(
+    calc(var(--cx) * -0.012),
+    calc(var(--cy) * -0.04 - var(--scroll)),
+    0
+  );
+}
+
+.code-xray-source {
+  margin: 0;
+  min-width: 0;
+  color: rgba(249, 243, 227, 0.78);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: clamp(0.62rem, 0.85vw, 0.76rem);
+  line-height: 1.62;
+  letter-spacing: 0.01em;
+  white-space: pre;
+  overflow: hidden;
+  user-select: none;
+}
+
+.code-xray-source .cx-kw {
+  color: #ef6b5c;
+}
+
+.code-xray-source .cx-str {
+  color: #e8c07a;
+}
+
+.code-xray-source .cx-num {
+  color: #d4a574;
+}
+
+.code-xray-source .cx-comment {
+  color: rgba(168, 159, 147, 0.72);
+  font-style: italic;
+}
+
+.code-xray-source .cx-accent {
+  color: var(--accent-bright);
+}
+
+@media (min-width: 768px) {
+  .code-xray {
+    --cx-size: 160px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .code-xray {
+    --cx-size: 175px;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .code-xray {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-xray {
+    display: none;
+  }
+}
+
 .display {
   font-family: var(--font-display), Georgia, serif;
   letter-spacing: -0.02em;
@@ -286,7 +435,7 @@ a {
   border: 1px solid var(--line);
   background:
     linear-gradient(165deg, rgba(216, 58, 44, 0.05), transparent 42%),
-    rgba(14, 14, 14, 0.72);
+    rgba(10, 10, 10, 0.96);
   transition:
     border-color 0.25s ease,
     background 0.25s ease,
@@ -298,7 +447,7 @@ a {
   border-color: rgba(216, 58, 44, 0.45);
   background:
     linear-gradient(165deg, rgba(216, 58, 44, 0.1), transparent 48%),
-    rgba(18, 12, 12, 0.88);
+    rgba(14, 10, 10, 0.98);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
   transform: translateY(-2px);
   color: var(--ink);
@@ -406,7 +555,7 @@ a {
 
 .btn-ghost {
   border-color: var(--line);
-  background: rgba(14, 14, 14, 0.65);
+  background: rgba(10, 10, 10, 0.94);
   backdrop-filter: blur(8px);
 }
 
@@ -421,7 +570,7 @@ a {
   gap: 0.45rem;
   padding: 0.45rem 0.8rem;
   border: 1px solid var(--line);
-  background: rgba(14, 14, 14, 0.75);
+  background: rgba(10, 10, 10, 0.94);
   color: var(--ink);
   font-size: 0.9rem;
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
@@ -438,7 +587,7 @@ a {
 .tech-chip:hover {
   border-color: rgba(216, 58, 44, 0.45);
   color: var(--accent-bright);
-  background: rgba(216, 58, 44, 0.06);
+  background: rgba(22, 12, 12, 0.98);
 }
 
 .tech-chip:hover .tech-chip-icon {
@@ -462,7 +611,7 @@ a {
   justify-content: space-between;
   gap: 0.75rem;
   border: 1px solid var(--line);
-  background: rgba(14, 14, 14, 0.65);
+  background: rgba(10, 10, 10, 0.96);
   padding: 1rem;
   transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
 }
@@ -487,7 +636,7 @@ a {
 .link-tile:focus-visible {
   border-color: rgba(216, 58, 44, 0.5);
   color: var(--accent-bright);
-  background: rgba(216, 58, 44, 0.06);
+  background: rgba(22, 12, 12, 0.98);
   outline: none;
 }
 

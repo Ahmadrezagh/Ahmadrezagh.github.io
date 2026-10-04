@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { CodeXRay } from "@/components/CodeXRay";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <div id="top" className="site-shell">
       <div className="atmosphere" aria-hidden />
+      <CodeXRay />
       <div className="content">
         <Header />
         <main>
